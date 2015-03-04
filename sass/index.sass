@@ -1,11 +1,80 @@
-.avatar
-.links
-  .link-items
+@import url(//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css)
+
+=icon-items
+  @media only screen and (min-width:600px)
+    .items
+      display: table
+    .item
+      display: table-cell
+  .items
     font-size: 18px
     text-align: center
+  .item
+    padding: 30px
+
+body
+  margin: 0
+  font-size: 16px
+h1, h2, h3
+  font-weight: bold
+h1
+  font-size: 38px
+  margin-top: 20px
+  margin-bottom: 15px
+  text-align: center
+h2
+  font-size: 26px
+  text-align: center
+h3
+  font-size: 18px
+h2, h3
+  margin-top: 20px
+  margin-bottom: 10px
+
+section, nav, footer
+  padding: 20px
+  > *
+    max-width: 900px
+
+section
+  > *
+    margin-left: auto
+    margin-right: auto
+
+nav, footer
+  text-align: center
+  background-color: #333333
+  line-height: 18px
+  height: 18px
+  &, *
+    color: #cccccc
+  > *
+    margin: 0 8px
+
+footer
+  font-size: 12px
+
+.avatar
+  height: auto
+  text-align: center
+  > *
+    vertical-align: middle
+    height: 100%
   .icon
     height: 120px
-    img
-      height: 100%
-  .name
-    margin: 1em 3em
+    border-radius: 50%
+    border: 1px solid white
+    box-shadow: 0 0 2px 1px white
+  background-color: #3399cc
+  color: white
+  text-shadow: 1px 1px 2px rgba(34, 34, 34, 0.5)
+
+.beliefs
+
+.skills-careers
+  background-color: #eeeeee
+  .skill-badges
+    +icon-items
+
+.social
+  +icon-items
