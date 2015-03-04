@@ -12,6 +12,14 @@
   .item
     padding: 30px
 
+// https://github.com/twbs/bootstrap/blob/3a2d6e40503019823bf197f278681e830bc14f31/less/mixins/clearfix.less
+.clearfix
+  &:before, &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
+
 body
   margin: 0
   font-size: 16px
@@ -30,6 +38,10 @@ h3
 h2, h3
   margin-top: 20px
   margin-bottom: 10px
+ul
+  padding-left: 2em
+li
+  list-style: disc
 
 section, nav, footer
   padding: 20px
@@ -73,8 +85,12 @@ footer
 
 .skills-careers
   background-color: #eeeeee
-  .skill-badges
-    +icon-items
+  overflow: hidden
+  .skill-group
+    width: 100%
+    float: left
+    @media only screen and (min-width:800px)
+      width: 50%
 
 .social
   +icon-items
