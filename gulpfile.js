@@ -33,9 +33,9 @@ gulp.task('img', function() {
 });
 
 gulp.task('build', function() {
-  gulp.start('img')
-  gulp.start('sass')
-  gulp.start('haml')
+  gulp.start('img');
+  gulp.start('sass');
+  gulp.start('haml');
 });
 
 gulp.task('webserver', function() {
@@ -58,4 +58,10 @@ gulp.task('watch', function() {
   watch(IMG_GLOB, function() {
     gulp.start('img');
   });
+});
+
+gulp.task('develop', function() {
+  gulp.start('build');
+  gulp.start('watch');
+  gulp.start('webserver');
 });
