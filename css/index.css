@@ -8,7 +8,8 @@
 body {
   margin: 0;
   font-size: 16px;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  line-height: 1.5em; }
 
 h1, h2, h3 {
   font-weight: bold; }
