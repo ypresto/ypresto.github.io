@@ -7,7 +7,8 @@
 
 body {
   margin: 0;
-  font-size: 16px; }
+  font-size: 16px;
+  font-family: sans-serif; }
 
 h1, h2, h3 {
   font-weight: bold; }
@@ -37,12 +38,10 @@ li {
 
 section, nav, footer {
   padding: 20px; }
-  section > *, nav > *, footer > * {
+  section .container, nav .container, footer .container {
+    margin-left: auto;
+    margin-right: auto;
     max-width: 900px; }
-
-section > * {
-  margin-left: auto;
-  margin-right: auto; }
 
 nav, footer {
   text-align: center;
@@ -89,6 +88,8 @@ footer {
     display: table-cell; } }
 .social .items {
   font-size: 18px;
-  text-align: center; }
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto; }
 .social .item {
   padding: 30px; }
