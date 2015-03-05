@@ -32,6 +32,12 @@ gulp.task('img', function() {
     .pipe(gulp.dest(DIST_DIR + '/img'));
 });
 
+gulp.task('build', function() {
+  gulp.start('img')
+  gulp.start('sass')
+  gulp.start('haml')
+});
+
 gulp.task('webserver', function() {
   gulp.src(DIST_DIR)
     .pipe(webserver({
