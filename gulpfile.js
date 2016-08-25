@@ -2,20 +2,19 @@
 'use strict';
 
 var gulp = require('gulp');
-var haml = require('gulp-haml');
+var pug = require('gulp-pug');
 var sass = require('gulp-sass');
 var watch = require('gulp-watch');
 var plumber = require('gulp-plumber');
 var webserver = require('gulp-webserver');
 var DIST_DIR = './dist';
-var HAML_GLOB = './haml/*.haml';
+var PUG_GLOB = './pug/*.pug';
 var SASS_GLOB = './sass/*.sass';
 var IMG_GLOB = './img/*';
 
-gulp.task('haml', function() {
-  gulp.src(HAML_GLOB)
-    .pipe(plumber())
-    .pipe(haml())
+gulp.task('pug', function() {
+  gulp.src(PUG_GLOB)
+    .pipe(pug())
     .pipe(gulp.dest(DIST_DIR));
 });
 
@@ -35,7 +34,7 @@ gulp.task('img', function() {
 gulp.task('build', function() {
   gulp.start('img');
   gulp.start('sass');
-  gulp.start('haml');
+  gulp.start('pug');
 });
 
 gulp.task('webserver', function() {
@@ -49,8 +48,8 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('watch', function() {
-  watch(HAML_GLOB, function() {
-    gulp.start('haml');
+  watch(PUG_GLOB, function() {
+    gulp.start('pug');
   });
   watch(SASS_GLOB, function() {
     gulp.start('sass');
