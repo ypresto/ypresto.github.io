@@ -2,6 +2,7 @@
 .clearfix:before, .clearfix:after {
   content: " ";
   display: table; }
+
 .clearfix:after {
   clear: both; }
 
@@ -87,10 +88,12 @@ footer {
     display: table; }
   .social .item {
     display: table-cell; } }
+
 .social .items {
   font-size: 18px;
   text-align: center;
   margin-left: auto;
   margin-right: auto; }
+
 .social .item {
   padding: 30px; }
