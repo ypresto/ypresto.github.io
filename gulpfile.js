@@ -8,9 +8,15 @@ var watch = require('gulp-watch');
 var plumber = require('gulp-plumber');
 var webserver = require('gulp-webserver');
 var DIST_DIR = './dist';
+var PUBLIC_GLOB = './public/**';
 var PUG_GLOB = './pug/*.pug';
 var SASS_GLOB = './sass/*.sass';
 var IMG_GLOB = './img/*';
+
+gulp.task('public', function() {
+  gulp.src(PUBLIC_GLOB)
+    .pipe(gulp.dest(DIST_DIR));
+});
 
 gulp.task('pug', function() {
   gulp.src(PUG_GLOB)
@@ -35,6 +41,7 @@ gulp.task('build', function() {
   gulp.start('img');
   gulp.start('sass');
   gulp.start('pug');
+  gulp.start('public');
 });
 
 gulp.task('webserver', function() {
@@ -48,6 +55,9 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('watch', function() {
+  watch(PUBLIC_GLOB, function() {
+    gulp.start('public');
+  });
   watch(PUG_GLOB, function() {
     gulp.start('pug');
   });
