@@ -5,6 +5,8 @@
   "private": true,
   "main": "index.js",
   "scripts": {
+    "build": "gulp build",
+    "develop": "gulp develop",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
